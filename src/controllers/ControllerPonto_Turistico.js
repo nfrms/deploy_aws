@@ -1,6 +1,7 @@
 const sequelize = require('sequelize');
 const database = require('../db');
-const BASE_URL = 'http://192.168.1.70:4200';
+// const BASE_URL = 'http://192.168.1.70:4200';
+const BASE_URL = 'ec2-15-188-74-166.eu-west-3.compute.amazonaws.com:4200';
 
 module.exports =
 {
