@@ -1,8 +1,8 @@
 const express = require('express');
-const ControlerPonto_Turistico = require('./controllers/ControllerPonto_Turistico.js') 
-const ControlerPersonagens = require('./controllers/ControllerPersonagens.js') 
-const ControllerCircuitos = require('./controllers/ControllerCircuitos.js') 
-const ControllerApi_google_maps = require('./controllers/ControllerApi_google_maps.js') 
+const ControlerPonto_Turistico = require('./controllers/ControllerPonto_Turistico.js'); 
+const ControlerPersonagens = require('./controllers/ControllerPersonagens.js'); 
+const ControllerCircuitos = require('./controllers/ControllerCircuitos.js'); 
+const ControllerApi_google_maps = require('./controllers/ControllerApi_google_maps.js'); 
 
 const Routes = express.Router();
 const fs = require('fs');
