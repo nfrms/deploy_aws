@@ -1,7 +1,7 @@
 const sequelize = require('sequelize');
 const database = require('../db');
-// const BASE_URL = 'http://192.168.1.70:4200';
-const BASE_URL = 'http://18.130.227.227:4200';
+const BASE_URL = 'http://192.168.1.70:4200';
+// const BASE_URL = 'http://18.130.227.227:4200';
 
 module.exports =
 {
@@ -10,6 +10,9 @@ module.exports =
             const data = await database.query('SELECT * FROM [dbo].[VIEW_Ponto_Turistico]', { type: sequelize.QueryTypes.SELECT });
             const imagesData = await database.query('SELECT * FROM [dbo].[View_Ponto_Turistico_Imagens] order by ordem', { type: sequelize.QueryTypes.SELECT});
             const personagens_PontoTuristico = await database.query('SELECT * FROM [View_Personagens_Ponto_Turistico]', { type: sequelize.QueryTypes.SELECT });
+            
+
+
 
             data.forEach(item => {
                 item.Resumo = BASE_URL + '/textos/' + item.Resumo;

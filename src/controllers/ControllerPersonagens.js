@@ -1,7 +1,7 @@
 const sequelize = require('sequelize');
 const database = require('../db');
-// const BASE_URL = 'http://192.168.1.70:4200';
-const BASE_URL = 'http://18.130.227.227:4200';
+const BASE_URL = 'http://192.168.1.70:4200';
+// const BASE_URL = 'http://18.130.227.227:4200';
 
 module.exports =
 {
@@ -10,17 +10,23 @@ module.exports =
             const data = await database.query('SELECT * FROM [dbo].[View_Personagens]', { type: sequelize.QueryTypes.SELECT });
             const PT_Data = await database.query('SELECT * FROM [DB_Escravatura].[dbo].[View_circuito_Personagens] order by ordem', { type: sequelize.QueryTypes.SELECT});
             const imagesData = await database.query('SELECT * FROM [dbo].[View_Personagens_Imagens] order by ordem', { type: sequelize.QueryTypes.SELECT });
-               
+            const personagens_PontoTuristico = await database.query('SELECT * FROM [View_Personagens_Ponto_Turistico]', { type: sequelize.QueryTypes.SELECT });
+
+            
+
             data.forEach(item => {
                 item.Resumo = BASE_URL + '/textos/' + item.Resumo;
                 item.Descricao = BASE_URL + '/textos/' + item.Descricao;
                 item.Caminho = BASE_URL + '/imagens/' + item.Caminho; 
                 item.PontosTuristicos = PT_Data.filter(pt => pt.ID_Personagem === item.ID_Personagem);
-                item.PontosTuristicos.forEach(pt => pt.Resumo = BASE_URL + '/textos/' + pt.Resumo);
+                item.PontosTuristicos.forEach(pt => {
+                    pt.Resumo = BASE_URL + '/textos/' + pt.Resumo;
+                    pt.personagens_PontoTuristico = personagens_PontoTuristico.filter(ppt => ppt.ID_Ponto_Turistico === pt.ID_ponto_Turistico);
+                });
                 item.Imagens = imagesData.filter(img => img.ID_Personagem === item.ID_Personagem);
                 item.Imagens.forEach(img => img.Caminho = BASE_URL + '/imagens/' + img.Caminho);
             });
-
+            
             return res.json(data); 
         } catch (erro) {
             return console.error('Erro na List: ', erro)
