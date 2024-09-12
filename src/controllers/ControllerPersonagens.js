@@ -1,7 +1,8 @@
 const sequelize = require('sequelize');
 const database = require('../db');
-//const BASE_URL = 'http://192.168.1.70:4200';
-const BASE_URL = 'http://3.8.175.220:4200';
+// const BASE_URL = 'http://192.168.1.70:4200';
+// const BASE_URL = 'http://3.8.175.220:4200';
+const BASE_URL = 'https://727b-2001-8a0-7aa7-7600-6cee-5fe2-bad4-6c52.ngrok-free.app';
 
 module.exports =
 {
