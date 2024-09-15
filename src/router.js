@@ -38,6 +38,8 @@ Routes.get('/Circuitos/List', ControllerCircuitos.List);
 Routes.get('/Circuitos/Avaliacao/:id/:rating', ControllerCircuitos.Avaliacao); 
 
 Routes.get('/google_maps', ControllerApi_google_maps.List);
+Routes.post('/google_maps/locations', ControllerApi_google_maps.saveLocations);
+
 
 
 module.exports = Routes;

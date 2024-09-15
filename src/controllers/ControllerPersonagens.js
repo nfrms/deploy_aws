@@ -2,7 +2,7 @@ const sequelize = require('sequelize');
 const database = require('../db');
 // const BASE_URL = 'http://192.168.1.70:4200';
 // const BASE_URL = 'http://3.8.175.220:4200';
-const BASE_URL = 'https://727b-2001-8a0-7aa7-7600-6cee-5fe2-bad4-6c52.ngrok-free.app';
+const BASE_URL = 'https://15af-2001-8a0-7aa7-7600-51dd-3ae0-4bf9-fd7c.ngrok-free.app';
 
 module.exports =
 {
@@ -12,7 +12,6 @@ module.exports =
             const PT_Data = await database.query('SELECT * FROM [DB_Escravatura].[dbo].[View_circuito_Personagens] order by ordem', { type: sequelize.QueryTypes.SELECT});
             const imagesData = await database.query('SELECT * FROM [dbo].[View_Personagens_Imagens] order by ordem', { type: sequelize.QueryTypes.SELECT });
             const personagens_PontoTuristico = await database.query('SELECT * FROM [View_Personagens_Ponto_Turistico]', { type: sequelize.QueryTypes.SELECT });
-
             
 
             data.forEach(item => {
