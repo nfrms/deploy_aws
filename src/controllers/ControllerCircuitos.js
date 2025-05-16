@@ -2,8 +2,8 @@ const sequelize = require('sequelize');
 const database = require('../db');
 // const BASE_URL = 'http://192.168.1.70:4200';
 // const BASE_URL = 'http://3.8.175.220:4200';
-const BASE_URL = 'https://15af-2001-8a0-7aa7-7600-51dd-3ae0-4bf9-fd7c.ngrok-free.app';
 
+const BASE_URL = 'https://8f44-2001-8a0-7aa7-7600-3033-553e-b435-759c.ngrok-free.app';
 module.exports =
 {
     async List(req, res){
@@ -35,49 +35,6 @@ module.exports =
         }  
     },
 
-    // async GetOne(req, res) {
-    //     try {
-    //         const id = req.params.id;
-    //         const data = await database.query('SELECT * FROM [dbo].[View_Circuito] WHERE ID_Circuito = ?', { replacements: [id], type: sequelize.QueryTypes.SELECT });
-    //         const PT_Data = await database.query('SELECT * FROM [dbo].[View_Circuito_Pontos_Turisticos] WHERE ID_Circuito = ? ORDER BY ordem', { replacements: [id], type: sequelize.QueryTypes.SELECT });
-    //         const personagens_Circuito = await database.query('SELECT * FROM [dbo].[View_Personagens_Circuito] WHERE ID_Circuito = ?', { replacements: [id], type: sequelize.QueryTypes.SELECT });
-    //         const pt_personagens = await database.query('SELECT * FROM [DB_Escravatura].[dbo].[View_Personagens_PT_Circuito] where ID_Circuito = ?', { replacements: [id], type: sequelize.QueryTypes.SELECT });
-    //         const pt_personagens_imagens = await database.query('SELECT * FROM [DB_Escravatura].[dbo].[View_Personagens_Circuito_Imagens] where ID_Circuito = ? ', { replacements: [id], type: sequelize.QueryTypes.SELECT });
-           
-
-    //         data[0].Resumo = BASE_URL + '/textos/' + (data[0].Resumo || 'null');
-    //         data[0].Descricao = BASE_URL + '/textos/' + (data[0].Descricao || 'null');
-    //         data[0].PontosTuristicos = PT_Data;
-    //         data[0].Personagens_Circuito = personagens_Circuito;
-    //         data[0].pt_personagens = pt_personagens;
-    //         data[0].pt_personagens_imagens = pt_personagens_imagens
-
-    //         data[0].PontosTuristicos.forEach(PT => {
-    //             PT.Resumo = BASE_URL + '/textos/' + (PT.Resumo || 'null');
-    //             PT.Descricao = BASE_URL + '/textos/' + (PT.Descricao || 'null');
-    //             PT.Caminho = BASE_URL + '/imagens/' + (PT.Caminho || 'null');
-    //         });
-    //         data[0].Personagens_Circuito.forEach(PT => {
-    //             PT.Resumo = BASE_URL + '/textos/' + (PT.Resumo || 'null');
-    //             PT.Descricao = BASE_URL + '/textos/' + (PT.Descricao || 'null');
-    //             PT.Caminho = BASE_URL + '/imagens/' + (PT.Caminho || 'null');
-    //         });
-    //         data[0].pt_personagens.forEach(PT => {
-    //             PT.Resumo = BASE_URL + '/textos/' + (PT.Resumo || 'null');
-    //             PT.Caminho = BASE_URL + '/imagens/' + (PT.Caminho || 'null');
-    //         });
-    //         data[0].pt_personagens_imagens.forEach(PT => {
-    //             PT.Resumo = BASE_URL + '/textos/' + (PT.Resumo || 'null');
-    //             PT.Caminho = BASE_URL + '/imagens/' + (PT.Caminho || 'null');
-    //         });
-
-    
-    //         return res.json(data[0]);
-    //     } catch (erro) {
-    //         return console.error('Erro no GetOne: ', erro);
-    //     }
-    // },
-    
     async Avaliacao(req, res) {
         try {
             const id = req.params.id; 
